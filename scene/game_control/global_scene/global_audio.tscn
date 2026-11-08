@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cwbwylek00dop"]
+
+[ext_resource type="Script" uid="uid://l8wqfrqx0ndp" path="res://script/global_audio.gd" id="1_3gekr"]
+[ext_resource type="AudioStream" uid="uid://cai4ewqok74ku" path="res://sound/SFX/retro-jump-3-236683.wav" id="2_swgrp"]
+[ext_resource type="AudioStream" uid="uid://bj4ad8gvsfhs0" path="res://sound/backsound/CLFM Super Chill (1).wav" id="2_yoa1b"]
+[ext_resource type="AudioStream" uid="uid://cm53vdpb8thmo" path="res://sound/SFX/level_selesai #2.wav" id="4_cvher"]
+[ext_resource type="AudioStream" uid="uid://dkc60l0q6y8ac" path="res://sound/SFX/collect-coin.wav" id="5_1q4io"]
+[ext_resource type="AudioStream" uid="uid://do7v34kp78cl4" path="res://sound/SFX/mati #2.wav" id="6_v2tei"]
+[ext_resource type="AudioStream" uid="uid://kos0kt6ji83u" path="res://sound/SFX/TakeDamage.wav" id="7_iebrc"]
+[ext_resource type="AudioStream" uid="uid://bp1h8sswoygvb" path="res://sound/SFX/TrapChest.wav" id="8_ujan7"]
+[ext_resource type="AudioStream" uid="uid://djw38ftht0pnn" path="res://sound/SFX/OpenChest.wav" id="9_5etj1"]
+[ext_resource type="AudioStream" uid="uid://p6x4qp1d12df" path="res://sound/SFX/CoinChest.wav" id="10_x2kqu"]
+[ext_resource type="AudioStream" uid="uid://cdn5er7sgat7a" path="res://sound/SFX/button-click-289742.wav" id="11_6wxvv"]
+
+[node name="Global_Audio" type="Node2D" unique_id=991849892]
+script = ExtResource("1_3gekr")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1523952363]
+process_mode = 3
+stream = ExtResource("2_yoa1b")
+volume_db = -8.0
+bus = &"Music"
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1793793392]
+stream = ExtResource("2_swgrp")
+volume_db = -10.0
+pitch_scale = 0.55
+bus = &"SFX"
+
+[node name="EndLevel" type="AudioStreamPlayer" parent="." unique_id=142975637]
+stream = ExtResource("4_cvher")
+bus = &"SFX"
+
+[node name="Coin" type="AudioStreamPlayer" parent="." unique_id=993845544]
+stream = ExtResource("5_1q4io")
+bus = &"SFX"
+
+[node name="Mati" type="AudioStreamPlayer" parent="." unique_id=126823058]
+stream = ExtResource("6_v2tei")
+bus = &"SFX"
+
+[node name="TakeDamage" type="AudioStreamPlayer" parent="." unique_id=1097224270]
+stream = ExtResource("7_iebrc")
+bus = &"SFX"
+
+[node name="TrapChest" type="AudioStreamPlayer" parent="." unique_id=1954262979]
+stream = ExtResource("8_ujan7")
+bus = &"SFX"
+
+[node name="OpenChest" type="AudioStreamPlayer" parent="." unique_id=1981442820]
+stream = ExtResource("9_5etj1")
+bus = &"SFX"
+
+[node name="CoinChest" type="AudioStreamPlayer" parent="." unique_id=1501913224]
+stream = ExtResource("10_x2kqu")
+bus = &"SFX"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=825805008]
+stream = ExtResource("11_6wxvv")
+bus = &"SFX"

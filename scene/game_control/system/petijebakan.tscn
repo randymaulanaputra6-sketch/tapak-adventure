@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://wfpuiv1skrgx"]
+
+[ext_resource type="Texture2D" uid="uid://dqvndq5ums0bs" path="res://asset/collision/objek/chest_interaction.png" id="1_3u5mt"]
+[ext_resource type="Script" uid="uid://dhhxxo1d1h4r7" path="res://script/petijebakan.gd" id="1_pg3p4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg3p4"]
+atlas = ExtResource("1_3u5mt")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2seuc"]
+atlas = ExtResource("1_3u5mt")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skc5a"]
+atlas = ExtResource("1_3u5mt")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87ak6"]
+atlas = ExtResource("1_3u5mt")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvkea"]
+atlas = ExtResource("1_3u5mt")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lldsu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg3p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2seuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skc5a")
+}],
+"loop": false,
+"name": &"membuka_peti_jebakan",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87ak6")
+}],
+"loop": true,
+"name": &"peti_jebakan_terbuka",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvkea")
+}],
+"loop": true,
+"name": &"peti_jebakan_tertutup",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2seuc"]
+size = Vector2(16, 14)
+
+[node name="petijebakan" type="Area2D" unique_id=1675598382]
+script = ExtResource("1_pg3p4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1126042139]
+sprite_frames = SubResource("SpriteFrames_lldsu")
+animation = &"peti_jebakan_tertutup"
+autoplay = "peti_jebakan_tertutup"
+frame_progress = 0.6812197
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1799478548]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_2seuc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_trapchest_sprite_2d_animation_finished"]

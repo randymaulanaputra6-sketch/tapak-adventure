@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bfhix1xaq28cb"]
+
+[ext_resource type="Texture2D" uid="uid://b385n3qjjaet8" path="res://asset/control/mobile_control/1766572907436.png" id="1_aqyin"]
+[ext_resource type="Texture2D" uid="uid://ch26jydqb6apn" path="res://asset/control/mobile_control/1766626575447.png" id="2_i38c6"]
+[ext_resource type="Texture2D" uid="uid://bwhalqkotjm81" path="res://asset/control/mobile_control/1766572929759.png" id="3_htkvu"]
+[ext_resource type="Texture2D" uid="uid://clnat8ls5v2yf" path="res://asset/control/mobile_control/1766626548466.png" id="4_a2if4"]
+[ext_resource type="Texture2D" uid="uid://c2jipdaj76yus" path="res://asset/control/mobile_control/1766572920325.png" id="5_xu353"]
+[ext_resource type="Texture2D" uid="uid://cj0phnx2cxm1u" path="res://asset/control/mobile_control/1766626561682.png" id="6_51ewr"]
+[ext_resource type="Texture2D" uid="uid://gwa2ut2uucov" path="res://asset/control/mobile_control/1768893903870.png" id="7_htkvu"]
+[ext_resource type="Texture2D" uid="uid://cuvohb3x01c4p" path="res://asset/control/mobile_control/1768893912042.png" id="8_a2if4"]
+[ext_resource type="PackedScene" uid="uid://bjhdybjlk3lxy" path="res://scene/game_control/game_scene/pause_menu.tscn" id="9_a2if4"]
+[ext_resource type="PackedScene" uid="uid://dxi2lsbd27ffc" path="res://scene/game_control/ui/coin_ui.tscn" id="10_xu353"]
+[ext_resource type="FontFile" uid="uid://pwhrc022wxu8" path="res://asset/font/Super Meatball.ttf" id="11_3pssn"]
+[ext_resource type="Script" uid="uid://d0egp3mcf2cta" path="res://scene/game_control/ui/level_label.gd" id="12_pk0ug"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk0ug"]
+bg_color = Color(0, 0.81609833, 0.45977437, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+
+[node name="button" type="CanvasLayer" unique_id=1965123976]
+
+[node name="kiri" type="TouchScreenButton" parent="." unique_id=934390824]
+position = Vector2(10, 235)
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_aqyin")
+texture_pressed = ExtResource("2_i38c6")
+action = "kiri"
+
+[node name="lompat" type="TouchScreenButton" parent="." unique_id=921790920]
+position = Vector2(500, 235)
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("3_htkvu")
+texture_pressed = ExtResource("4_a2if4")
+action = "lompat"
+
+[node name="kanan" type="TouchScreenButton" parent="." unique_id=1584891175]
+position = Vector2(100, 235)
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("5_xu353")
+texture_pressed = ExtResource("6_51ewr")
+action = "kanan"
+
+[node name="Pause" type="TouchScreenButton" parent="." unique_id=796661275]
+position = Vector2(535, 8)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_htkvu")
+texture_pressed = ExtResource("8_a2if4")
+action = "pause"
+
+[node name="pause_menu" parent="." unique_id=1999854792 instance=ExtResource("9_a2if4")]
+offset_left = 250.0
+offset_top = 100.0
+offset_right = 250.0
+offset_bottom = 100.0
+
+[node name="Coin_UI" parent="." unique_id=670391698 instance=ExtResource("10_xu353")]
+
+[node name="Level_UI" type="CanvasLayer" parent="." unique_id=1542630789]
+
+[node name="Panel" type="Panel" parent="Level_UI" unique_id=139401330]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = 8.0
+offset_right = 67.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pk0ug")
+
+[node name="LevelLabel" type="Label" parent="Level_UI/Panel" unique_id=294276411]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_3pssn")
+theme_override_font_sizes/font_size = 21
+text = "level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("12_pk0ug")
+
+[connection signal="pressed" from="Pause" to="pause_menu" method="_on_pause_pressed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bylbvh4ff1g85"]
+
+[ext_resource type="Script" uid="uid://65fmxhv1nih2" path="res://scene/gui/heartGui.gd" id="1_dpaoa"]
+[ext_resource type="Texture2D" uid="uid://c3iimlhl8gqy6" path="res://asset/collision/objek/Sprite_hati.png" id="1_j72pl"]
+
+[node name="heartGui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 14)
+offset_right = 16.0
+offset_bottom = 14.0
+script = ExtResource("1_dpaoa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_j72pl")
+centered = false
+hframes = 2

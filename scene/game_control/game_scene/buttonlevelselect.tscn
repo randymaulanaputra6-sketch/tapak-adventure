@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwev8vcxvvvex"]
+
+[ext_resource type="FontFile" uid="uid://pwhrc022wxu8" path="res://asset/font/Super Meatball.ttf" id="1_m2kkt"]
+[ext_resource type="Texture2D" uid="uid://cuvohb3x01c4p" path="res://asset/control/mobile_control/1768893912042.png" id="2_oiat0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niwxi"]
+bg_color = Color(0.9676506, 0.9676505, 0.9676505, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiat0"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.79607844)
+shadow_size = 4
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isfyx"]
+bg_color = Color(0.52570283, 0.5257028, 0.5257028, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.78039217)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omejy"]
+bg_color = Color(0.6976289, 0.69762903, 0.697629, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.78039217)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbqhm"]
+
+[node name="buttonlevelselect" type="Button"]
+offset_right = 150.0
+offset_bottom = 150.0
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_niwxi")
+
+[node name="button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_m2kkt")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_oiat0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_isfyx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_omejy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pbqhm")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="button"]
+position = Vector2(-0.035, 0)
+scale = Vector2(2.375547, 2.34375)
+texture_normal = ExtResource("2_oiat0")

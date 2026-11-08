@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dconfyrqg6yij"]
+
+[ext_resource type="Script" uid="uid://cgyg87ieomkkb" path="res://script/redslime.gd" id="1_v6ee1"]
+[ext_resource type="Texture2D" uid="uid://d2gl4nk3hkxaf" path="res://asset/character/enemy/Red_slime.png" id="1_vsovs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ft4k"]
+atlas = ExtResource("1_vsovs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlrws"]
+atlas = ExtResource("1_vsovs")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edftw"]
+atlas = ExtResource("1_vsovs")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhhcm"]
+atlas = ExtResource("1_vsovs")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lf2x"]
+atlas = ExtResource("1_vsovs")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1gug"]
+atlas = ExtResource("1_vsovs")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgsix"]
+atlas = ExtResource("1_vsovs")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjfyf"]
+atlas = ExtResource("1_vsovs")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45plq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ft4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlrws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edftw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhhcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lf2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1gug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgsix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjfyf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxxp7"]
+size = Vector2(13, 21.833332)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxn66"]
+size = Vector2(18, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsovs"]
+size = Vector2(17, 24.166664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6ee1"]
+size = Vector2(17, 19.166664)
+
+[node name="redslime" type="CharacterBody2D" unique_id=179695674]
+script = ExtResource("1_v6ee1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2024206355]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_45plq")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8094454
+speed_scale = 1.02
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1020554809]
+position = Vector2(0.5, 0.08333329)
+shape = SubResource("RectangleShape2D_wxxp7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1743450500]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_lxn66")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2111028289]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1703082010]
+position = Vector2(0.5, -1.2500004)
+shape = SubResource("RectangleShape2D_vsovs")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=824283195]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1043584090]
+position = Vector2(0.49999976, 0.41666675)
+shape = SubResource("RectangleShape2D_v6ee1")
+debug_color = Color(0.7, 0, 0.011666489, 0.41960785)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1305171815]
+unique_name_in_owner = true
+position = Vector2(10, 1)
+target_position = Vector2(0, 16)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

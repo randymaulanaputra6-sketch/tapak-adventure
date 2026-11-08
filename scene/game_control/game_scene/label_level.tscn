@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://jt6j4fkh1max"]
+
+[ext_resource type="FontFile" uid="uid://pwhrc022wxu8" path="res://asset/font/Super Meatball.ttf" id="1_82gn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2elsk"]
+size = Vector2(480, 320)
+
+[node name="Label" type="Label" unique_id=1729841432]
+offset_left = 96.0
+offset_top = 152.0
+offset_right = 150.0
+offset_bottom = 175.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_82gn7")
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=681401797]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=562931562]
+position = Vector2(40, 8)
+shape = SubResource("RectangleShape2D_2elsk")

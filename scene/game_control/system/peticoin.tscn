@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://tracer5ysa4"]
+
+[ext_resource type="Texture2D" uid="uid://dqvndq5ums0bs" path="res://asset/collision/objek/chest_interaction.png" id="1_7irew"]
+[ext_resource type="Script" uid="uid://b20rtcv3q2rng" path="res://script/peticoin.gd" id="1_q8ky2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8ky2"]
+atlas = ExtResource("1_7irew")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rswtf"]
+atlas = ExtResource("1_7irew")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4ylo"]
+atlas = ExtResource("1_7irew")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6gsn"]
+atlas = ExtResource("1_7irew")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bg7ho"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8ky2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rswtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4ylo")
+}],
+"loop": false,
+"name": &"membuka_peti_coin",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6gsn")
+}],
+"loop": true,
+"name": &"peti_coin_terbuka",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8ky2")
+}],
+"loop": true,
+"name": &"peti_coin_tertutup",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0w3m"]
+size = Vector2(16, 14)
+
+[node name="peticoin" type="Area2D"]
+script = ExtResource("1_q8ky2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bg7ho")
+animation = &"membuka_peti_coin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_j0w3m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

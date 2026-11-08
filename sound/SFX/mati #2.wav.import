@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://do7v34kp78cl4"
+path="res://.godot/imported/mati #2.wav-a8b2dd2574a745d439904fc8cc3938ef.sample"
+
+[deps]
+
+source_file="res://sound/SFX/mati #2.wav"
+dest_files=["res://.godot/imported/mati #2.wav-a8b2dd2574a745d439904fc8cc3938ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

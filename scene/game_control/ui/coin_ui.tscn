@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dxi2lsbd27ffc"]
+
+[ext_resource type="FontFile" uid="uid://pwhrc022wxu8" path="res://asset/font/Super Meatball.ttf" id="1_1nbt6"]
+[ext_resource type="Script" uid="uid://2oxd6l2hc6ik" path="res://script/coin_label.gd" id="2_rndqa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvyx5"]
+bg_color = Color(0, 0.81609833, 0.45977437, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+
+[node name="Coin_UI" type="CanvasLayer" unique_id=504602837]
+
+[node name="Panel" type="Panel" parent="." unique_id=1307752580]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 127.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xvyx5")
+
+[node name="CoinLabel" type="Label" parent="Panel" unique_id=278026288]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1nbt6")
+theme_override_font_sizes/font_size = 21
+text = "coin: +0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_rndqa")

@@ -1,0 +1,449 @@
+[gd_scene format=3 uid="uid://bjhdybjlk3lxy"]
+
+[ext_resource type="FontFile" uid="uid://pwhrc022wxu8" path="res://asset/font/Super Meatball.ttf" id="1_grdc7"]
+[ext_resource type="Script" uid="uid://d0omgj2x2yca5" path="res://script/pause_menu.gd" id="1_me6vf"]
+[ext_resource type="Texture2D" uid="uid://dpsi82w6r00oh" path="res://asset/control/main_menu/1766823219510.png" id="3_cq4tv"]
+[ext_resource type="Texture2D" uid="uid://dwarbn2abl3bh" path="res://asset/control/main_menu/1766823236330.png" id="4_qbwph"]
+[ext_resource type="Script" uid="uid://df13evgdpx7vc" path="res://script/audio_control.gd" id="5_4q2vw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grdc7"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.79607844)
+shadow_size = 4
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_me6vf"]
+bg_color = Color(0.52570283, 0.5257028, 0.5257028, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.78039217)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq4tv"]
+bg_color = Color(0.6976289, 0.69762903, 0.697629, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.78039217)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ug2vv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et5lo"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.79607844)
+shadow_size = 4
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1gbo"]
+bg_color = Color(0.52570283, 0.5257028, 0.5257028, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.78039217)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71u2q"]
+bg_color = Color(0.6976289, 0.69762903, 0.697629, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.78039217)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xugnn"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_03dpp"]
+color = Color(0.9896861, 0.9896862, 0.9896861, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_uc7mi"]
+color = Color(0.29201856, 0.33021963, 0.876985, 1)
+thickness = 6
+
+[node name="P_S" type="Control" unique_id=4276065]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_me6vf")
+
+[node name="pause_menu" type="Panel" parent="." unique_id=1891772909]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -36.0
+offset_right = 152.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause_ui" type="VBoxContainer" parent="pause_menu" unique_id=230239483]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_right = 176.0
+offset_bottom = 216.0
+
+[node name="Label" type="Label" parent="pause_menu/pause_ui" unique_id=1216727427]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 38
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu/pause_ui" unique_id=1730923881]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="resume" type="TouchScreenButton" parent="pause_menu/pause_ui/VBoxContainer" unique_id=1713646768]
+scale = Vector2(1.671875, 1)
+texture_normal = ExtResource("3_cq4tv")
+
+[node name="Resume" type="Button" parent="pause_menu/pause_ui/VBoxContainer" unique_id=1965049999]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_grdc7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_me6vf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq4tv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug2vv")
+text = "Resume"
+
+[node name="option" type="TouchScreenButton" parent="pause_menu/pause_ui/VBoxContainer" unique_id=2022732517]
+position = Vector2(0.49999997, 40.499996)
+scale = Vector2(1.671875, 1)
+texture_normal = ExtResource("3_cq4tv")
+
+[node name="Option" type="Button" parent="pause_menu/pause_ui/VBoxContainer" unique_id=1393240815]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_grdc7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_me6vf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq4tv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug2vv")
+text = "Option"
+
+[node name="restart" type="TouchScreenButton" parent="pause_menu/pause_ui/VBoxContainer" unique_id=1534410407]
+position = Vector2(0.5, 80.5)
+scale = Vector2(1.6666666, 1)
+texture_normal = ExtResource("3_cq4tv")
+texture_pressed = ExtResource("4_qbwph")
+
+[node name="Restart" type="Button" parent="pause_menu/pause_ui/VBoxContainer" unique_id=793695164]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_grdc7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_me6vf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq4tv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug2vv")
+text = "restart"
+
+[node name="mainmenu" type="TouchScreenButton" parent="pause_menu/pause_ui/VBoxContainer" unique_id=341286305]
+position = Vector2(0.49999997, 120.5)
+scale = Vector2(1.671875, 1)
+texture_normal = ExtResource("3_cq4tv")
+
+[node name="Mainmenu" type="Button" parent="pause_menu/pause_ui/VBoxContainer" unique_id=1509517554]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_grdc7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_me6vf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq4tv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug2vv")
+text = "Main Menu"
+metadata/_edit_group_ = true
+
+[node name="Option" type="Panel" parent="." unique_id=28058627]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -36.0
+offset_right = 171.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Option" unique_id=585522208]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 30
+text = "Option"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back_Opt" type="TouchScreenButton" parent="Option" unique_id=1849037542]
+position = Vector2(48.000004, 156)
+scale = Vector2(1.4583333, 1.0937501)
+texture_normal = ExtResource("3_cq4tv")
+texture_pressed = ExtResource("4_qbwph")
+
+[node name="back" type="Button" parent="Option" unique_id=1620670380]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -48.0
+offset_right = -48.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_et5lo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r1gbo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_71u2q")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xugnn")
+text = "Back"
+
+[node name="Music_Volume" type="HBoxContainer" parent="Option" unique_id=1513580921]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -48.0
+offset_right = 88.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="0" type="TouchScreenButton" parent="Option/Music_Volume" unique_id=116079681]
+position = Vector2(-2.2888184e-05, 2.0980835e-05)
+scale = Vector2(0.61458313, 0.8749992)
+texture_normal = ExtResource("3_cq4tv")
+texture_pressed = ExtResource("4_qbwph")
+
+[node name="volume_0" type="Button" parent="Option/Music_Volume" unique_id=1588186606]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_et5lo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r1gbo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_71u2q")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xugnn")
+text = " Music off "
+
+[node name="1" type="TouchScreenButton" parent="Option/Music_Volume" unique_id=222711350]
+position = Vector2(69.99998, -9.5364703e-07)
+scale = Vector2(0.6145834, 0.8750001)
+texture_normal = ExtResource("3_cq4tv")
+texture_pressed = ExtResource("4_qbwph")
+
+[node name="volume_1" type="Button" parent="Option/Music_Volume" unique_id=1531694703]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_et5lo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r1gbo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_71u2q")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xugnn")
+text = " Music on "
+
+[node name="AudioControl" type="HSlider" parent="Option" unique_id=1314867757]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 32.0
+offset_right = 104.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_03dpp")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_uc7mi")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_uc7mi")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_4q2vw")
+audio_bus_name = "Music"
+
+[node name="Music" type="Label" parent="Option" unique_id=1929534431]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 32.0
+offset_right = 72.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 20
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="Label" parent="Option" unique_id=1379548944]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 96.0
+offset_right = 74.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 20
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX_volume" type="HBoxContainer" parent="Option" unique_id=2094277615]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_right = 97.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="SFX0" type="TouchScreenButton" parent="Option/SFX_volume" unique_id=1183235509]
+position = Vector2(-2.2888184e-05, 2.0980835e-05)
+scale = Vector2(0.55208325, 0.8749992)
+texture_normal = ExtResource("3_cq4tv")
+texture_pressed = ExtResource("4_qbwph")
+
+[node name="SFX_0" type="Button" parent="Option/SFX_volume" unique_id=1210630317]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_et5lo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r1gbo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_71u2q")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xugnn")
+text = "  SFX off  "
+
+[node name="SFX1" type="TouchScreenButton" parent="Option/SFX_volume" unique_id=1321023564]
+position = Vector2(69.99998, -9.5364703e-07)
+scale = Vector2(0.46875, 0.8750001)
+texture_normal = ExtResource("3_cq4tv")
+texture_pressed = ExtResource("4_qbwph")
+
+[node name="SFX_1" type="Button" parent="Option/SFX_volume" unique_id=977821497]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_grdc7")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_et5lo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r1gbo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_71u2q")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xugnn")
+text = "  SFX on  "
+
+[connection signal="pressed" from="pause_menu/pause_ui/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="pause_menu/pause_ui/VBoxContainer/option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="pause_menu/pause_ui/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="pause_menu/pause_ui/VBoxContainer/mainmenu" to="." method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="Option/Back_Opt" to="." method="_on_back_opt_pressed"]
+[connection signal="pressed" from="Option/Music_Volume/0" to="Option/AudioControl" method="_on__pressed"]
+[connection signal="pressed" from="Option/Music_Volume/1" to="Option/AudioControl" method="_on_unmute_pressed"]
+[connection signal="value_changed" from="Option/AudioControl" to="Option/AudioControl" method="_on_value_changed"]
+[connection signal="pressed" from="Option/SFX_volume/SFX0" to="Option/AudioControl" method="_on_sfx_0_pressed"]
+[connection signal="pressed" from="Option/SFX_volume/SFX1" to="Option/AudioControl" method="_on_sfx_un_mute_pressed"]

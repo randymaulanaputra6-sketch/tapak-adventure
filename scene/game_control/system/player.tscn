@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://xsqx2txf860v"]
+
+[ext_resource type="Script" uid="uid://de885virsuur1" path="res://scene/player.gd" id="1_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://0edm71cr2rik" path="res://asset/character/Player/1766533524084.png" id="2_fvtld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_462ap"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qbti"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjaqi"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvtld"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct4mp"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4jxa"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh5ij"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvr3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_462ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qbti")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjaqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvtld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct4mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4jxa")
+}],
+"loop": true,
+"name": &"lari",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh5ij")
+}],
+"loop": true,
+"name": &"lompat",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2u0t"]
+size = Vector2(10.666668, 16.666666)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_hjaqi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 48)
+sprite_frames = SubResource("SpriteFrames_gvr3l")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.31302324
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(88, 54.333336)
+shape = SubResource("RectangleShape2D_s2u0t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(88, 54.666664)
+zoom = Vector2(1.35, 1.35)
+limit_top = -700
+limit_bottom = 500
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
