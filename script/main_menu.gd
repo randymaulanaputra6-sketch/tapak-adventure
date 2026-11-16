@@ -54,3 +54,8 @@ func _on_back_options_pressed() -> void:
 func _on_reset_game_data_pressed() -> void:
 	GlobalAudio.play_button_click()
 	Global.reset_data()
+
+#toko skin
+func _buka_toko() -> void:
+	GlobalAudio.play_button_click()
+	get_tree().change_scene_to_file("res://scene/game_control/game_scene/shop_skin.tscn")

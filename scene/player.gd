@@ -22,6 +22,7 @@ func jump_side(x):
 
 func _ready():
 	effects.play("RESET")
+	SkinDB.terapkan(player_ui, Global.skin_dipakai)
 
 func _physics_process(delta: float) -> void:
 	

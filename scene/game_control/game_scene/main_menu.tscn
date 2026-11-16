@@ -447,6 +447,48 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
 text = " reset data "
 
+[node name="SkinBox" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -156.0
+offset_top = -64.0
+offset_right = -20.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SkinTouch" type="TouchScreenButton" parent="SkinBox"]
+position = Vector2(0, 0)
+scale = Vector2(1.4166666, 1.5)
+texture_normal = ExtResource("3_2atga")
+texture_pressed = ExtResource("4_by01r")
+
+[node name="Skin" type="Button" parent="SkinBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hxu56")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4svf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxu56")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
+text = "Skin"
+
+[connection signal="pressed" from="SkinBox/SkinTouch" to="." method="_buka_toko"]
+[connection signal="pressed" from="SkinBox/Skin" to="." method="_buka_toko"]
 [connection signal="pressed" from="menu_button/Start" to="." method="_on_touch_screen_button_start_pressed"]
 [connection signal="pressed" from="menu_button/start_game" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="menu_button/Setting" to="." method="_on_touch_screen_button_setting_pressed"]
