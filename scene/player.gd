@@ -71,7 +71,6 @@ func _on_hurtbox_area_entered(area):
 			GlobalAudio.play_take_damage()
 		if currentHealth == 0:
 			currentHealth = maxHealth
-			Global.kurang_level()
 			GlobalAudio.play_mati()
 			get_tree().reload_current_scene()
 			Global.player_mati_ambil_coin()

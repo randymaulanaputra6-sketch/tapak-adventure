@@ -7,6 +7,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "player"):
 		GlobalAudio.play_end_level()
 		Global.finish_add_coin()
+		Global.selesaikan_level(Global.nomor_level(get_tree().current_scene))
 		get_tree().change_scene_to_packed(target_level)
 
 func _physics_process(delta: float) -> void:

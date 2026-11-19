@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://crj68ral3tuig" path="res://script/main_menu.gd" id="1_2fwvj"]
 [ext_resource type="Texture2D" uid="uid://bn8cgg6ed503n" path="res://asset/background/IMG_20260123_072651.jpg" id="2_hmxu4"]
 [ext_resource type="FontFile" uid="uid://pwhrc022wxu8" path="res://asset/font/Super Meatball.ttf" id="2_hxu56"]
-[ext_resource type="Texture2D" uid="uid://boinusvk8d280" path="res://asset/control/main_menu/1766823294359.png" id="3_2atga"]
-[ext_resource type="Texture2D" uid="uid://hg1tti8gcb8a" path="res://asset/control/main_menu/1766823263642.png" id="3_sepwh"]
-[ext_resource type="Texture2D" uid="uid://dvsuvecp1r8wx" path="res://asset/control/main_menu/1766823281290.png" id="4_14wem"]
-[ext_resource type="Texture2D" uid="uid://bncsdvyag22hy" path="res://asset/control/main_menu/1766823304505.png" id="4_by01r"]
 [ext_resource type="Texture2D" uid="uid://dpsi82w6r00oh" path="res://asset/control/main_menu/1766823219510.png" id="7_dclss"]
 [ext_resource type="Texture2D" uid="uid://dwarbn2abl3bh" path="res://asset/control/main_menu/1766823236330.png" id="8_hmxu4"]
 [ext_resource type="Script" uid="uid://df13evgdpx7vc" path="res://script/audio_control.gd" id="11_ictww"]
@@ -82,21 +78,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -12.0
-offset_right = 72.0
-offset_bottom = 120.0
+offset_left = -110.0
+offset_top = -84.0
+offset_right = 110.0
+offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 10
 
-[node name="Start" type="TouchScreenButton" parent="menu_button" unique_id=77995771]
-scale = Vector2(1.5, 1.25)
-texture_normal = ExtResource("3_sepwh")
-texture_pressed = ExtResource("4_14wem")
-action = "start"
-
-[node name="start_game" type="Button" parent="menu_button" unique_id=1275303113]
+[node name="Start" type="Button" parent="menu_button" unique_id=77995771]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -112,12 +102,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
 text = "Start game"
 
-[node name="Setting" type="TouchScreenButton" parent="menu_button" unique_id=1207782270]
-position = Vector2(0, 48)
-scale = Vector2(1.5104164, 1.125)
-texture_normal = ExtResource("3_2atga")
-texture_pressed = ExtResource("4_by01r")
-action = "setting"
+[node name="Level" type="Button" parent="menu_button"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hxu56")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4svf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxu56")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
+text = "Level"
 
 [node name="Options" type="Button" parent="menu_button" unique_id=1698392209]
 layout_mode = 2
@@ -135,13 +134,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
 text = "Options"
 
-[node name="Exit" type="TouchScreenButton" parent="menu_button" unique_id=298667254]
-position = Vector2(0, 96)
-scale = Vector2(1.5104163, 1.25)
-texture_normal = ExtResource("7_dclss")
-texture_pressed = ExtResource("8_hmxu4")
-
-[node name="Exit2" type="Button" parent="menu_button" unique_id=1916323404]
+[node name="Exit" type="Button" parent="menu_button" unique_id=1916323404]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -165,16 +158,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -240.0
-offset_top = -132.0
-offset_right = 217.0
-offset_bottom = -53.0
+offset_top = -160.0
+offset_right = 240.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_offset_y = 8
 theme_override_fonts/font = ExtResource("2_hxu56")
-theme_override_font_sizes/font_size = 58
+theme_override_font_sizes/font_size = 50
 text = "Tapak Adventure"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -209,21 +202,15 @@ text = "Option"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="TouchScreenButton" parent="Options1" unique_id=23666317]
-position = Vector2(48, 176.00002)
-scale = Vector2(1.6666669, 1.0937501)
-texture_normal = ExtResource("7_dclss")
-texture_pressed = ExtResource("8_hmxu4")
-
 [node name="back" type="Button" parent="Options1" unique_id=1629105618]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 48.0
+offset_left = 132.0
 offset_top = -48.0
-offset_right = -48.0
+offset_right = -24.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -240,6 +227,32 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hxu56")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
 text = "Back"
+
+[node name="reset_data" type="Button" parent="Options1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -48.0
+offset_right = -132.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hxu56")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4svf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxu56")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
+text = "reset data"
 
 [node name="Music_Volume" type="HBoxContainer" parent="Options1" unique_id=1133861636]
 layout_mode = 1
@@ -411,42 +424,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
 text = "  SFX on  "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1191493250]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -272.0
-offset_top = 84.0
-offset_right = -132.0
-offset_bottom = 124.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="reset_game_data" type="TouchScreenButton" parent="VBoxContainer" unique_id=1914082987]
-position = Vector2(-3.8146973e-06, 3.8146973e-06)
-scale = Vector2(1.4583334, 1.250001)
-texture_normal = ExtResource("7_dclss")
-texture_pressed = ExtResource("8_hmxu4")
-
-[node name="reset_data" type="Button" parent="VBoxContainer" unique_id=666300383]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_hxu56")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_m4svf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hxu56")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
-text = " reset data "
-
 [node name="SkinBox" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -454,18 +431,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -156.0
-offset_top = -64.0
+offset_left = -160.0
+offset_top = -52.0
 offset_right = -20.0
-offset_bottom = -16.0
+offset_bottom = -12.0
 grow_horizontal = 0
 grow_vertical = 0
-
-[node name="SkinTouch" type="TouchScreenButton" parent="SkinBox"]
-position = Vector2(0, 0)
-scale = Vector2(1.4166666, 1.5)
-texture_normal = ExtResource("3_2atga")
-texture_pressed = ExtResource("4_by01r")
 
 [node name="Skin" type="Button" parent="SkinBox"]
 layout_mode = 1
@@ -480,25 +451,22 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hxu56")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_m4svf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hxu56")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2fwvj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0iwki")
 text = "Skin"
 
-[connection signal="pressed" from="SkinBox/SkinTouch" to="." method="_buka_toko"]
-[connection signal="pressed" from="SkinBox/Skin" to="." method="_buka_toko"]
-[connection signal="pressed" from="menu_button/Start" to="." method="_on_touch_screen_button_start_pressed"]
-[connection signal="pressed" from="menu_button/start_game" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="menu_button/Setting" to="." method="_on_touch_screen_button_setting_pressed"]
-[connection signal="pressed" from="menu_button/Options" to="." method="_on_setting_pressed"]
-[connection signal="pressed" from="menu_button/Exit" to="." method="_on_touch_screen_button_exit_pressed"]
-[connection signal="pressed" from="menu_button/Exit2" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Options1/Back" to="." method="_on_back_options_pressed"]
+[connection signal="gui_input" from="menu_button/Start" to="." method="_on_start_gui_input"]
+[connection signal="gui_input" from="menu_button/Level" to="." method="_on_level_gui_input"]
+[connection signal="gui_input" from="menu_button/Options" to="." method="_on_options_gui_input"]
+[connection signal="gui_input" from="menu_button/Exit" to="." method="_on_exit_gui_input"]
+[connection signal="gui_input" from="Options1/back" to="." method="_on_back_gui_input"]
+[connection signal="gui_input" from="Options1/reset_data" to="." method="_on_reset_gui_input"]
+[connection signal="gui_input" from="SkinBox/Skin" to="." method="_on_skin_gui_input"]
 [connection signal="pressed" from="Options1/Music_Volume/0" to="Options1/AudioControl" method="_on__pressed"]
 [connection signal="pressed" from="Options1/Music_Volume/1" to="Options1/AudioControl" method="_on_unmute_pressed"]
 [connection signal="value_changed" from="Options1/AudioControl" to="Options1/AudioControl" method="_on_value_changed"]
 [connection signal="pressed" from="Options1/SFX_volume/SFX0" to="Options1/AudioControl" method="_on_sfx_0_pressed"]
 [connection signal="pressed" from="Options1/SFX_volume/SFX1" to="Options1/AudioControl" method="_on_sfx_un_mute_pressed"]
-[connection signal="pressed" from="VBoxContainer/reset_game_data" to="." method="_on_reset_game_data_pressed"]

@@ -28,7 +28,6 @@ func _on_option_pressed() -> void:
 	option.visible = true
 
 func _on_mainmenu_pressed() -> void:
-	Global.balik_menu_level()
 	GlobalAudio.play_button_click()
 	resume()
 	get_tree().change_scene_to_file("res://scene/game_control/game_scene/main_menu.tscn")
@@ -46,5 +45,4 @@ func _on_back_opt_pressed() -> void:
 func _on_restart_pressed() -> void:
 	resume()
 	get_tree().reload_current_scene()
-	Global.kurang_level()
 	GlobalAudio.play_button_click()

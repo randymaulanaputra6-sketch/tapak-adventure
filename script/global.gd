@@ -1,5 +1,7 @@
 extends Node
 
+const LEVEL_TERAKHIR := 30
+
 var coin: int = 0
 signal my_coin(coin: int)
 
@@ -8,6 +10,7 @@ var skin_dipakai: String = SkinDB.ID_DEFAULT
 signal skin_berubah(skin_id: String)
 
 var level: int = 0
+var level_terbuka: int = 1
 signal my_level(level: int)
 
 
@@ -16,7 +19,7 @@ func _ready():
 
 func reset_data():
 	coin = 0
-	#level = 0
+	level_terbuka = 1
 	skin_dimiliki.clear()
 	skin_dimiliki.append(SkinDB.ID_DEFAULT)
 	skin_dipakai = SkinDB.ID_DEFAULT
@@ -27,10 +30,10 @@ func reset_data():
 
 func save():
 	var data = {
-	#"level": level,
 	"coin": coin,
 	"skin_dimiliki": skin_dimiliki,
-	"skin_dipakai": skin_dipakai
+	"skin_dipakai": skin_dipakai,
+	"level_terbuka": level_terbuka
 	}
 	SaveManager.save_game(data)
 
@@ -41,7 +44,7 @@ func _load():
 		return
 
 	coin = int(data.get("coin", 0))
-	#level = data.get("level", 1)
+	level_terbuka = clampi(int(data.get("level_terbuka", 1)), 1, LEVEL_TERAKHIR)
 
 	skin_dimiliki.clear()
 	for id in data.get("skin_dimiliki", []):
@@ -56,24 +59,18 @@ func _load():
 		skin_dipakai = SkinDB.ID_DEFAULT
 
 #kontrol level
-func add_level() -> void:
-	level += 1
-	emit_signal("my_level", level)
-	print(level)
+func nomor_level(scene: Node) -> int:
+	return maxi(1, scene.scene_file_path.get_file().get_basename().trim_prefix("level_").to_int())
 
-func kurang_level() -> void:
-	level -= 1
+func set_level(n: int) -> void:
+	level = n
 	emit_signal("my_level", level)
-	print(level)
 
-func balik_menu_level() -> void:
-	level = 0
-	emit_signal("my_level", level)
-	print(level)
-
-func reset_level() -> void:
-	if level == 30:
-		level = 0
+func selesaikan_level(n: int) -> void:
+	var berikut := mini(n + 1, LEVEL_TERAKHIR)
+	if berikut > level_terbuka:
+		level_terbuka = berikut
+		save()
 
 #kontrol coin
 func load_coin() -> void:

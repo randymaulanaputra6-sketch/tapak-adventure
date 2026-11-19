@@ -9,5 +9,4 @@ func _ready() -> void:
 	heartsContainer.updateHearts(player.currentHealth)
 	player.healthChange.connect(heartsContainer.updateHearts)
 	Global.load_coin()
-	Global.add_level()
-	Global.reset_level()
+	Global.set_level(Global.nomor_level(self))
