@@ -24,6 +24,7 @@ config/icon="uid://tdeudvtvagbj"
 Global="*res://script/global.gd"
 GlobalAudio="*res://scene/game_control/global_scene/global_audio.tscn"
 SaveManager="*uid://cdb5exyn1tvxm"
+TransisiLevel="*res://scene/game_control/game_scene/level_transition.tscn"
 
 [display]
 

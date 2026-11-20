@@ -79,7 +79,7 @@ func _batal() -> void:
 
 func _kembali() -> void:
 	GlobalAudio.play_button_click()
-	get_tree().change_scene_to_file(MENU)
+	TransisiLevel.ganti_scene(MENU)
 
 func _pesan(teks: String) -> void:
 	pesan.text = teks

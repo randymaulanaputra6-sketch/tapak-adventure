@@ -8,7 +8,7 @@ func _on_body_entered(body: Node2D) -> void:
 		GlobalAudio.play_end_level()
 		Global.finish_add_coin()
 		Global.selesaikan_level(Global.nomor_level(get_tree().current_scene))
-		get_tree().change_scene_to_packed(target_level)
+		TransisiLevel.ganti_scene(target_level)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

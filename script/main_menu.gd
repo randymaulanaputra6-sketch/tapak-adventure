@@ -16,13 +16,13 @@ func _tap(event: InputEvent) -> bool:
 func _on_start_gui_input(event: InputEvent) -> void:
 	if _tap(event):
 		GlobalAudio.play_button_click()
-		get_tree().change_scene_to_file("res://scene/levels/level_1.tscn")
+		TransisiLevel.ganti_scene("res://scene/levels/level_1.tscn")
 
 
 func _on_level_gui_input(event: InputEvent) -> void:
 	if _tap(event):
 		GlobalAudio.play_button_click()
-		get_tree().change_scene_to_file("res://scene/game_control/game_scene/levelselect.tscn")
+		TransisiLevel.ganti_scene("res://scene/game_control/game_scene/levelselect.tscn")
 
 
 func _on_options_gui_input(event: InputEvent) -> void:
@@ -52,4 +52,4 @@ func _on_reset_gui_input(event: InputEvent) -> void:
 func _on_skin_gui_input(event: InputEvent) -> void:
 	if _tap(event):
 		GlobalAudio.play_button_click()
-		get_tree().change_scene_to_file("res://scene/game_control/game_scene/shop_skin.tscn")
+		TransisiLevel.ganti_scene("res://scene/game_control/game_scene/shop_skin.tscn")

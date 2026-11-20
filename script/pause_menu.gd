@@ -30,7 +30,7 @@ func _on_option_pressed() -> void:
 func _on_mainmenu_pressed() -> void:
 	GlobalAudio.play_button_click()
 	resume()
-	get_tree().change_scene_to_file("res://scene/game_control/game_scene/main_menu.tscn")
+	TransisiLevel.ganti_scene("res://scene/game_control/game_scene/main_menu.tscn")
 
 func _on_pause_pressed() -> void:
 	GlobalAudio.play_button_click()
@@ -44,5 +44,5 @@ func _on_back_opt_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	resume()
-	get_tree().reload_current_scene()
+	TransisiLevel.ganti_scene(get_tree().current_scene.scene_file_path)
 	GlobalAudio.play_button_click()

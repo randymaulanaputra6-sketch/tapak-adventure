@@ -31,11 +31,11 @@ func _pilih_level(event: InputEvent, nomor: int) -> void:
 	GlobalAudio.play_button_click()
 	if nomor > Global.level_terbuka:
 		return
-	get_tree().change_scene_to_file(LEVEL_SCENE % nomor)
+	TransisiLevel.ganti_scene(LEVEL_SCENE % nomor)
 
 
 func _kembali(event: InputEvent) -> void:
 	if not (event is InputEventScreenTouch and event.pressed):
 		return
 	GlobalAudio.play_button_click()
-	get_tree().change_scene_to_file(MENU)
+	TransisiLevel.ganti_scene(MENU)
